@@ -23,7 +23,7 @@ public class LoginServlet extends HttpServlet {
 		String pass = req.getParameter("pass");
 		if(LoginDao.validate(name,pass)) {
 			res.sendRedirect("https://www.starbucks.com/");
-			req.getRequestDispatcher("welcome.java").include(req, res);
+			req.getRequestDispatcher("welcome").include(req, res);
 		}else {
 			out.println("<html>");
             out.println("<head>");
