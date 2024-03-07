@@ -1,0 +1,20 @@
+/* styles.css *//* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Barlow+Condensed:wght@100&family=Exo+2:ital,wght@1,200&display=swap');
+
+
+
+
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Set height to fill the viewport vertically */
+}
+
+.error-message {
+  color:#164803;
+  font-weight: bold;
+  font-size: larger;
+}

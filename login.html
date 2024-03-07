@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index html</title>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Acme&family=Barlow+Condensed:wght@100&family=Exo+2:ital,wght@1,200&display=swap');
+
+  /* Center-align the form */
+  .center-align {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    margin-left: 350px;
+    height: 50vh; /* This ensures the form is centered vertically */
+  }
+ 
+  img{
+	  width: 100%;
+    height: 100%;
+	  object-fit: cover;
+
+  }
+  .bg-cover {
+    position: fixed; /* Fixed position for background image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set z-index to send the background image to the back */
+  }
+  .input-field{
+         border-radius: 20px;
+         padding: 10px;
+         
+  } 
+  .btn{
+	  padding: 5px;
+	  background-color: transparent;
+	  cursor: pointer;
+	  border: none;
+	  
+  }
+  .btn:hover{
+	  background-color:#164803;
+	  border-radius: 20px;
+	  padding: 12px; /* Increase padding on hover */
+	  color: white; 
+  } #new-btn{
+	  margin-top: 10px;
+	  cursor: pointer;
+	}
+	span{
+		margin-top: 50px;
+font-family: 'Acme', sans-serif; /* Use 'Acme' font for the entire body */
+	}
+	
+</style>
+</head>
+<body>
+	<div class="bg-cover">
+	<img src="bgimg.jpg">
+	</div>
+	<form action="LoginServlet" method="post">
+<div class="center-align">	
+	<input type="text" class="input-field"  name="name" placeholder="Enter Your Username" ><br/>
+	<input type = "password" class="input-field"   name="pass" placeholder="Enter Your Password" ><br/>
+	<input type="submit" class="btn" value="login"  formaction="LoginServlet">
+	<div id="new-btn">
+	<input type="submit" class="btn"  value="New Account"  formaction="New.html">
+	</div>
+	<span class="quote"><b>Good coffee, good vibes, great day ahead!</b></span>
+
+	</div>
+	
+</form>
+ <script>
+    document.getElementById("loginForm").addEventListener("input", function() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+      var newAccountBtn = document.getElementById("new-btn").querySelector("input");
+
+      if (!username && !password) {
+        newAccountBtn.disabled = false;
+      } else {
+        newAccountBtn.disabled = true;
+      }
+    });
+</script>
+</body>
+</html>

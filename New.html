@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>New Account</title>
+<style>
+		@import url('https://fonts.googleapis.com/css2?family=Acme&family=Barlow+Condensed:wght@100&family=Exo+2:ital,wght@1,200&display=swap');
+
+	.head{
+		font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 30vh;
+		
+	}
+	.elements{
+	 display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* Adjusted margin */
+    height: 100vh; /* Updated height to fill the viewport vertically */
+		
+	}
+	  img{
+	  width: 100%;
+    height: 100%;
+	  object-fit: cover;
+
+  }
+  .bg-cover {
+    position: fixed; /* Fixed position for background image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Set z-index to send the background image to the back */
+  }
+  .elements{
+	      display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    margin-left: 350px;
+    height: 50px; /* This ensures the form is centered vertically */
+  }
+  .input-field{
+         border-radius: 20px;
+         padding: 10px;
+         
+  } 
+  #btn{
+	 padding: 5px;
+	  background-color: transparent;
+	  cursor: pointer;
+	  border: none;
+  } 
+  #btn:hover{
+	  background-color:#164803;
+	  border-radius: 20px;
+	  padding: 12px; /* Increase padding on hover */
+	  color: white;
+	}
+</style>
+</head>
+<body>
+	<div class="bg-cover">
+	<img src="bgimg.jpg">
+	</div>
+	<form action="Regservlet" method="get">
+	<div class="head">
+	<h4 id="header">Create Your Username & Password</h4>
+	</div>
+	<div class="elements">
+	
+	<input type="text" class="input-field" placeholder="Enter Your Username" name="usname" required>
+	<br>
+
+	<input type="password"  class="input-field" placeholder="Enter Your Password" name="pwd" id="pwd" required>
+	<br>
+
+	<input type="password"  class="input-field" placeholder="Confirm Password" name="cpwd" id="cwd" required>
+	<br>
+	
+	
+	<input type = "submit" id="btn" value="Register" formaction="Regservlet">
+</div>
+<script>
+	document.getElementById('btn').addEventListener('click',function(){
+		let password = document.getElementById('pwd').value;
+		let confirmPassword = document.getElementById('cwd').value;
+		
+		if(password !==confirmPassword){
+			alert("Passwords doesn't match ");
+			event.preventDefault();
+		}
+});
+
+	
+</script>
+	
+	
+</body>
+</html>
+
